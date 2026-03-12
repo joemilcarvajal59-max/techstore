@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>TechStore</title>
+
+<style>
+
+/* <!DOCTYPE html>
+<html>
+
+<head>
+
+<title>TechStore</title>
+
+<style>
+
+/* body{
+font-family:Arial;
+background:#f3f3f3;
+text-align:center;
+}
+
+header{
+background:black;
+color:white;
+padding:20px;
+}
+
+.productos{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.producto{
+background:white;
+padding:20px;
+width:200px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+button{
+background:green;
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
+}
+
+footer{
+margin-top:50px;
+padding:20px;
+background:black;
+color:white;
+text-align:center;
+}
+<h2>Reseñas de clientes</h2>
+
+<div class="reseña">
+<p>⭐⭐⭐⭐⭐</p>
+<p>"Muy buen producto, llegó rápido."</p>
+</div>
+
+<div class="reseña">
+<p>⭐⭐⭐⭐</p>
+<p>"Buen precio, recomiendo la tienda."</p>
+</div>
+
+<div class="reseña">
+<p>⭐⭐⭐⭐⭐</p>
+<p>"Funciona perfecto, volveré a comprar."</p>
+</div>
+.destacado{
+background:white;
+padding:20px;
+margin:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.reseña{
+background:white;
+margin:15px;
+padding:15px;
+border-radius:10px;
+}*/
+
+</style>
+
+</head>
+
+<body>
+
+<!-- pega aquí todo tu HTML -->
+
+<script>
+
+/* pega aquí todo tu JavaScript */
+
+</script>
+
+</body>
+
+</html> */
+
+</style>
+
+</head>
+
+<body>
+
+<!-- <div id="login">
+<h2>Panel administrador</h2>
+<input type="password" id="clave" placeholder="contraseña">
+<button onclick="entrar()">Entrar</button>
+</div>
+
+<div id="admin" style="display:none;">
+<h2>Control de la tienda</h2>
+
+<input id="nombreProducto" placeholder="Nombre producto">
+<input id="precioProducto" placeholder="Precio">
+<input id="fotoProducto" placeholder="URL de la foto">
+
+<button onclick="crearProducto()">Agregar producto</button>
+
+</div>
+<header>
+<h1>TechStore</h1>
+<p>Simulador de empresa dropshipping</p>
+</header>
+
+<h2>Productos</h2>
+<div id="productos" class="productos"></div>
+
+<h2>Carrito</h2>
+<ul id="carrito"></ul>
+<p>Total: $<span id="total">0</span></p>
+
+<button onclick="comprar()">Finalizar compra</button>
+
+<h2>Panel empresa</h2>
+
+<p>Ventas: <span id="ventas">0</span></p>
+<p>Ganancias: $<span id="ganancias">0</span></p>
+<p>Pedidos internacionales: <span id="pais">0</span></p>
+
+<button onclick="pedidoAutomatico()">Simular pedido</button>
+<h2>Gráfica de ventas</h2>
+
+<canvas id="grafico" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<footer>
+<p>Creado por Joemil Carvajal</p>
+</footer>
+<h2>🔥 Producto más vendido</h2>
+
+<div class="destacado">
+<h3>Auriculares Bluetooth Pro</h3>
+<img src="https://images.unsplash.com/photo-1518441902117-9a6d0c0b7c0c?w=400">
+<p>Oferta especial $19.990</p>
+
+<p id="contador"></p>
+
+<button onclick="comprar()">Comprar ahora</button>
+</div> -->
+
+<script>
+
+/*let productos=[
+{nombre:"Auriculares Bluetooth",precio:19990},
+{nombre:"Smartwatch",precio:29990},
+{nombre:"Mini Proyector",precio:39990},
+{nombre:"Luz LED Gaming",precio:14990},
+{nombre:"Mouse Gamer",precio:12990}
+]
+
+let carrito=[]
+let total=0
+
+let ventas=0
+let ganancias=0
+let paises=0
+
+function mostrarProductos(){
+
+let contenedor=document.getElementById("productos")
+
+productos.forEach(p=>{
+
+let div=document.createElement("div")
+div.className="producto"
+
+div.innerHTML=`
+<h3>${p.nombre}</h3>
+<p>$${p.precio}</p>
+<button onclick="agregar('${p.nombre}',${p.precio})">Agregar</button>
+`
+
+contenedor.appendChild(div)
+
+})
+
+}
+
+mostrarProductos()
+
+function agregar(nombre,precio){
+
+carrito.push({nombre,precio})
+
+let item=document.createElement("li")
+item.textContent=nombre+" - $"+precio
+
+document.getElementById("carrito").appendChild(item)
+
+total+=precio
+document.getElementById("total").textContent=total
+}
+
+function comprar(){
+
+if(carrito.length==0){
+alert("Carrito vacío")
+return
+}
+
+ventas++
+ganancias+=total
+
+document.getElementById("ventas").textContent=ventas
+document.getElementById("ganancias").textContent=ganancias
+
+carrito=[]
+total=0
+
+document.getElementById("carrito").innerHTML=""
+document.getElementById("total").textContent=0
+
+alert("Pedido realizado")
+}
+
+function pedidoAutomatico(){
+
+let precios=[19990,29990,39990,14990,12990]
+
+let random=precios[Math.floor(Math.random()*precios.length)]
+
+ventas++
+ganancias+=random
+paises++
+
+document.getElementById("ventas").textContent=ventas
+document.getElementById("ganancias").textContent=ganancias
+document.getElementById("pais").textContent=paises
+}
+let datosVentas=[0]
+
+let ctx=document.getElementById("grafico").getContext("2d")
+
+let grafico=new Chart(ctx,{
+type:"line",
+data:{
+labels:["Inicio"],
+datasets:[{
+label:"Ventas",
+data:datosVentas
+}]
+}
+})
+
+function actualizarGrafico(){
+
+datosVentas.push(ganancias)
+
+grafico.data.labels.push("Venta "+ventas)
+
+grafico.update()
+
+}
+function entrar(){
+
+let clave=document.getElementById("clave").value
+
+if(clave==="8765Joe"){
+document.getElementById("admin").style.display="block"
+document.getElementById("login").style.display="none"
+}else{
+alert("Contraseña incorrecta")
+}
+
+}
+function crearProducto(){
+
+let nombre=document.getElementById("nombreProducto").value
+let precio=document.getElementById("precioProducto").value
+let foto=document.getElementById("fotoProducto").value
+
+let contenedor=document.getElementById("productos")
+
+let div=document.createElement("div")
+
+div.innerHTML=`
+<h3>${nombre}</h3>
+<img src="${foto}" width="150">
+<p>$${precio}</p>
+<button onclick="comprar()">Comprar</button>
+`
+
+contenedor.appendChild(div)
+
+}
+let tiempo=600
+
+setInterval(function(){
+
+let minutos=Math.floor(tiempo/60)
+let segundos=tiempo%60
+
+document.getElementById("contador").innerText=
+"Oferta termina en "+minutos+":"+segundos
+
+tiempo--
+
+},1000) */
+
+</script>
+
+</body>
+
+</html>
